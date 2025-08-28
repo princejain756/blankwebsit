@@ -43,7 +43,7 @@ const ScienceBanner = () => {
               })}
             </div>
             
-            <Button variant="hero" size="lg" className="group">
+            <Button variant="primary" size="lg" className="group">
               See evidence pages
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>

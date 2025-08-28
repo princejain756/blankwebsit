@@ -59,11 +59,11 @@ const HeroSection = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button variant="hero" size="xl" className="group">
+          <Button variant="primary" size="xl" className="group">
             Shop the Proven Edit
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="glass" size="xl">
+          <Button variant="luxury" size="xl">
             Ask Prince Anything →
           </Button>
         </div>
