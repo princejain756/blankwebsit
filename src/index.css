@@ -1,42 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* BLANK Design System - Premium Luxury E-commerce */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Brand Colors - Premium Ink Palette */
+    --primary: 243 95% 71%;          /* #6B7CFF */
+    --primary-accent: 243 100% 81%;  /* #A5B4FF */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Success/Warning/Danger */
+    --success: 142 76% 47%;          /* #22C55E */
+    --warning: 38 92% 50%;           /* #F59E0B */
+    --danger: 0 84% 60%;             /* #EF4444 */
+    
+    /* Ink Neutrals - Deep to Light */
+    --ink-900: 229 40% 20%;          /* #1C224D */
+    --ink-800: 229 42% 29%;          /* #2C3478 */
+    --ink-700: 229 44% 41%;          /* #3E48A6 */
+    --ink-600: 229 45% 54%;          /* #5360D6 */
+    --ink-500: 243 95% 71%;          /* #6B7CFF - same as primary */
+    --ink-400: 243 100% 81%;         /* #A5B4FF */
+    --ink-300: 243 100% 87%;         /* #C3CBFF */
+    --ink-200: 243 100% 93%;         /* #DDE2FF */
+    --ink-100: 242 100% 96%;         /* #EEF0FF */
+    --ink-50: 245 100% 98%;          /* #F7F8FF */
+    
+    /* Neutrals - Dark to Light */
+    --neutral-0: 226 33% 7%;         /* #0B0D12 */
+    --neutral-50: 226 29% 8%;        /* #0F1218 */
+    --neutral-100: 225 25% 11%;      /* #151922 */
+    --neutral-200: 224 21% 16%;      /* #1E2430 */
+    --neutral-300: 223 18% 22%;      /* #2A3140 */
+    --neutral-400: 222 22% 30%;      /* #3A4558 */
+    --neutral-500: 220 17% 42%;      /* #556179 */
+    --neutral-600: 218 19% 56%;      /* #7C8AA6 */
+    --neutral-700: 217 23% 71%;      /* #A7B3C8 */
+    --neutral-800: 216 35% 83%;      /* #D0D7E5 */
+    --neutral-900: 216 56% 95%;      /* #F1F4FA */
+    --neutral-1000: 0 0% 100%;       /* #FFFFFF */
+    
+    /* Semantic Tokens */
+    --background: var(--neutral-1000);
+    --foreground: var(--neutral-0);
+    --card: var(--neutral-1000);
+    --card-foreground: var(--neutral-0);
+    --popover: var(--neutral-1000);
+    --popover-foreground: var(--neutral-0);
+    
+    --secondary: var(--neutral-900);
+    --secondary-foreground: var(--neutral-0);
+    --muted: var(--neutral-900);
+    --muted-foreground: var(--neutral-500);
+    --accent: var(--ink-100);
+    --accent-foreground: var(--ink-800);
+    
+    --destructive: var(--danger);
+    --destructive-foreground: var(--neutral-1000);
+    
+    --border: var(--neutral-800);
+    --input: var(--neutral-800);
+    --ring: var(--primary);
+    
+    /* Glass & Effects */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --glass-tint: rgba(107, 124, 255, 0.08);
+    
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(180 100% 50%) 45%, hsl(271 100% 69%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--ink-50)) 0%, hsl(var(--neutral-1000)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px rgba(11, 13, 18, 0.25);
+    --shadow-elevated: 0 24px 60px rgba(11, 13, 18, 0.35);
+    --shadow-glass: 0 8px 32px rgba(107, 124, 255, 0.15);
+    
+    /* Sizing */
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +105,27 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark mode uses same brand colors but different semantic mappings */
+    --background: var(--neutral-0);
+    --foreground: var(--neutral-1000);
+    --card: var(--neutral-50);
+    --card-foreground: var(--neutral-1000);
+    --popover: var(--neutral-50);
+    --popover-foreground: var(--neutral-1000);
+    
+    --secondary: var(--neutral-200);
+    --secondary-foreground: var(--neutral-1000);
+    --muted: var(--neutral-200);
+    --muted-foreground: var(--neutral-600);
+    --accent: var(--ink-900);
+    --accent-foreground: var(--ink-100);
+    
+    --border: var(--neutral-200);
+    --input: var(--neutral-200);
+    
+    /* Glass in dark mode */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -100,6 +135,75 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Glass morphism utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .glass-card {
+    @apply glass rounded-[var(--radius-lg)] p-6;
+    box-shadow: var(--shadow-glass);
+  }
+  
+  /* Gradient utilities */
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+  
+  .gradient-glass {
+    background: var(--gradient-glass);
+  }
+  
+  /* Typography utilities */
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+  }
+  
+  .font-body {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 20px rgba(107, 124, 255, 0.5); }
+    to { box-shadow: 0 0 30px rgba(107, 124, 255, 0.8); }
   }
 }

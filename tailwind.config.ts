@@ -26,6 +26,7 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
+					accent: 'hsl(var(--primary-accent))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
@@ -52,21 +53,53 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))',
+				danger: 'hsl(var(--danger))',
+				ink: {
+					50: 'hsl(var(--ink-50))',
+					100: 'hsl(var(--ink-100))',
+					200: 'hsl(var(--ink-200))',
+					300: 'hsl(var(--ink-300))',
+					400: 'hsl(var(--ink-400))',
+					500: 'hsl(var(--ink-500))',
+					600: 'hsl(var(--ink-600))',
+					700: 'hsl(var(--ink-700))',
+					800: 'hsl(var(--ink-800))',
+					900: 'hsl(var(--ink-900))'
+				},
+				neutral: {
+					0: 'hsl(var(--neutral-0))',
+					50: 'hsl(var(--neutral-50))',
+					100: 'hsl(var(--neutral-100))',
+					200: 'hsl(var(--neutral-200))',
+					300: 'hsl(var(--neutral-300))',
+					400: 'hsl(var(--neutral-400))',
+					500: 'hsl(var(--neutral-500))',
+					600: 'hsl(var(--neutral-600))',
+					700: 'hsl(var(--neutral-700))',
+					800: 'hsl(var(--neutral-800))',
+					900: 'hsl(var(--neutral-900))',
+					1000: 'hsl(var(--neutral-1000))'
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'var(--radius-sm)',
+				md: 'var(--radius-md)',
+				lg: 'var(--radius-lg)',
+				xl: 'var(--radius-xl)',
+				'2xl': '2rem'
+			},
+			fontFamily: {
+				display: ['Cormorant Garamond', 'serif'],
+				heading: ['Cormorant Garamond', 'serif'],
+				body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+			},
+			boxShadow: {
+				soft: 'var(--shadow-soft)',
+				elevated: 'var(--shadow-elevated)',
+				glass: 'var(--shadow-glass)'
 			},
 			keyframes: {
 				'accordion-down': {
