@@ -9,7 +9,6 @@ const Navigation = () => {
     { label: "Shop", href: "/shop" },
     { label: "Science", href: "/science" },
     { label: "Founder Concierge", href: "/founder" },
-    { label: "Apps", href: "/apps" },
     { label: "Journal", href: "/journal" }
   ];
 
@@ -21,17 +20,17 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-morphism border-b border-border">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="font-display text-2xl font-semibold">
-              <span className="bg-gradient-to-r from-primary to-primary-accent bg-clip-text text-transparent">
+          <div className="flex items-center group cursor-pointer">
+            <div>
+              <h1 className="font-display text-2xl font-bold text-gradient">
                 BLANK
-              </span>
-              <span className="text-muted-foreground font-body text-sm ml-2">by Prince Jain</span>
-            </h1>
+              </h1>
+              <p className="text-xs text-muted-foreground font-medium -mt-1">by Prince Jain</p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -40,7 +39,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="text-sm font-medium text-foreground hover:text-brand-600 transition-colors duration-200 py-2"
               >
                 {item.label}
               </a>
@@ -56,10 +55,13 @@ const Navigation = () => {
                   key={item.label}
                   variant="ghost"
                   size="icon"
-                  className="hidden sm:flex"
+                  className="hidden sm:flex hover:bg-brand-50"
                   title={item.label}
+                  asChild
                 >
-                  <Icon className="w-5 h-5" />
+                  <a href={item.href}>
+                    <Icon className="w-5 h-5" />
+                  </a>
                 </Button>
               );
             })}
@@ -82,25 +84,27 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-border">
+          <div className="lg:hidden border-t border-border backdrop-blur-xl">
             <div className="py-4 space-y-2">
               {primaryNav.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-lg transition-all"
+                  className="block px-4 py-3 text-base font-medium text-foreground hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
               
-              <div className="flex items-center justify-around pt-4 border-t border-border mt-4">
+              <div className="grid grid-cols-4 gap-2 pt-4 border-t border-border">
                 {secondaryNav.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <Button key={item.label} variant="ghost" size="sm">
-                      <Icon className="w-4 h-4 mr-2" />
-                      {item.label}
+                    <Button key={item.label} variant="outline" className="flex-col h-14 gap-2" asChild>
+                      <a href={item.href}>
+                        <Icon className="w-4 h-4" />
+                        <span className="text-xs">{item.label}</span>
+                      </a>
                     </Button>
                   );
                 })}

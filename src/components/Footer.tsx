@@ -7,7 +7,6 @@ const Footer = () => {
     { label: "Shop", href: "/shop" },
     { label: "Science", href: "/science" },
     { label: "Founder Concierge", href: "/founder" },
-    { label: "Apps", href: "/apps" },
     { label: "Journal", href: "/journal" },
     { label: "Support", href: "/support" }
   ];
@@ -21,95 +20,91 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-neutral-0 text-neutral-1000 py-16">
+    <footer className="bg-surface-0 text-surface-1000 py-16">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Brand & Newsletter */}
-          <div className="lg:col-span-2">
-            <h3 className="font-display text-3xl mb-4">
-              <span className="bg-gradient-to-r from-primary to-primary-accent bg-clip-text text-transparent">
-                BLANK
-              </span>
-              <span className="text-neutral-600 font-body text-lg ml-2">by Prince Jain</span>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          {/* Brand */}
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="font-display text-3xl font-bold text-gradient mb-4">
+              BLANK
             </h3>
-            <p className="text-neutral-600 mb-6 leading-relaxed">
-              Science × Curation × You<br />
-              Research-backed luxury essentials with transparent science and founder concierge.
+            <p className="text-surface-900 mb-6 max-w-md">
+              Science‑forward premium e‑commerce. Research‑backed luxury essentials with transparent evidence and human concierge.
             </p>
             
-            <div className="space-y-4">
-              <h4 className="font-heading text-lg">Join the Proven Edit</h4>
+            {/* Newsletter */}
+            <div className="mb-6">
+              <h4 className="font-heading text-lg font-semibold mb-3">Join the Proven Edit</h4>
               <div className="flex gap-2">
-                <Input 
-                  placeholder="your@email.com" 
-                  className="bg-neutral-100 border-neutral-200 text-neutral-0"
+                <input 
+                  type="email" 
+                  placeholder="your@email.com"
+                  className="flex-1 px-4 py-2 rounded-lg bg-surface-50 border border-surface-100 text-surface-0 placeholder:text-surface-100"
                 />
-                <Button variant="default">Subscribe</Button>
+                <Button size="sm">Subscribe</Button>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-heading text-lg font-semibold mb-4">Quick Links</h4>
+            <div className="space-y-2">
               {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-neutral-600 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block text-surface-900 hover:text-surface-1000 transition-colors"
+                >
+                  {link.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Contact & Policies */}
+          {/* Policies */}
           <div>
-            <h4 className="font-heading text-lg mb-4">Contact</h4>
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm text-neutral-600">hello@blank.cool</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-sm text-neutral-600">+91-XXXXXXXXXX</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-primary" />
-                <span className="text-sm text-neutral-600">WhatsApp Chat</span>
-              </div>
-            </div>
-            
-            <h5 className="font-medium mb-2">Policies</h5>
-            <ul className="space-y-1">
+            <h4 className="font-heading text-lg font-semibold mb-4">Policies</h4>
+            <div className="space-y-2">
               {policies.map((policy) => (
-                <li key={policy.label}>
-                  <a 
-                    href={policy.href}
-                    className="text-sm text-neutral-600 hover:text-primary transition-colors"
-                  >
-                    {policy.label}
-                  </a>
-                </li>
+                <a
+                  key={policy.label}
+                  href={policy.href}
+                  className="block text-surface-900 hover:text-surface-1000 transition-colors"
+                >
+                  {policy.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-neutral-200 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-neutral-600">
-              © 2024 BLANK by Prince Jain. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-neutral-600">Made with 💜 in India</span>
+        {/* Contact */}
+        <div className="border-t border-surface-100 pt-8 mb-8">
+          <div className="flex flex-wrap gap-6">
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-brand-400" />
+              <span className="text-surface-900">hello@blank.cool</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-brand-400" />
+              <span className="text-surface-900">+91-XXXXXXXXXX</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MessageCircle className="w-4 h-4 text-brand-400" />
+              <span className="text-surface-900">WhatsApp Concierge</span>
             </div>
           </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-surface-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-surface-900 text-sm">
+            © 2024 BLANK by Prince Jain. All rights reserved.
+          </p>
+          <p className="text-surface-900 text-xs">
+            Information is for educational purposes; not a substitute for professional medical advice.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,53 +1,56 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText, BarChart3, Users } from "lucide-react";
+import { ArrowRight, FileText, BarChart3, AlertTriangle } from "lucide-react";
 
 const ScienceBanner = () => {
-  const features = [
+  const bulletPoints = [
     {
       icon: FileText,
-      text: "Readable summaries + full references"
+      text: "Mechanism"
     },
     {
-      icon: BarChart3, 
-      text: "Effect sizes & expected timelines"
+      icon: BarChart3,
+      text: "Endpoints & effect sizes"
     },
     {
-      icon: Users,
-      text: "Who it's for & who should avoid"
+      icon: AlertTriangle,
+      text: "Who should avoid"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-primary/5 via-primary-accent/5 to-primary/5">
+    <section className="py-20 bg-gradient-to-r from-brand-50 to-surface-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="glass-card text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl mb-6">
-              Every page cites{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-accent bg-clip-text text-transparent">
-                the science
-              </span>
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={index} className="flex items-center justify-center md:justify-start gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-foreground">{feature.text}</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Every PDP cites the science.
+          </h2>
+          
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Transparent research summaries with full citations and clear risk‑benefit analysis.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-8 mb-8">
+            {bulletPoints.map((bullet, index) => {
+              const Icon = bullet.icon;
+              return (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-brand-600" />
                   </div>
-                );
-              })}
-            </div>
-            
-            <Button variant="primary" size="lg" className="group">
-              See evidence pages
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+                  <span className="text-sm font-medium text-foreground">
+                    {bullet.text}
+                  </span>
+                </div>
+              );
+            })}
           </div>
+
+          <Button size="lg" className="group" asChild>
+            <a href="/science">
+              See evidence pages
+              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,75 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* BLANK Design System - Sophisticated & Human-Crafted */
+/* BLANK Design System - Science-Forward Premium E-Commerce */
 
 @layer base {
   :root {
-    /* Sophisticated Color Palette */
-    --obsidian: 220 20% 8%;           /* #0D1117 */
-    --charcoal: 220 15% 12%;          /* #1A1F2E */
-    --slate: 220 12% 18%;             /* #252B3A */
-    --mist: 220 8% 65%;               /* #8B94A5 */
-    --pearl: 220 20% 95%;             /* #F2F4F8 */
-    --snow: 0 0% 100%;                /* #FFFFFF */
+    /* Brand Color System */
+    --brand-50: 245 247 255;          /* #F5F7FF */
+    --brand-100: 235 238 255;         /* #EBEEFF */
+    --brand-200: 214 219 255;         /* #D6DBFF */
+    --brand-300: 180 191 255;         /* #B4BFFF */
+    --brand-400: 143 160 255;         /* #8FA0FF */
+    --brand-500: 107 124 255;         /* #6B7CFF */
+    --brand-600: 79 94 219;           /* #4F5EDB */
+    --brand-700: 60 70 170;           /* #3C46AA */
+    --brand-800: 42 50 122;           /* #2A327A */
+    --brand-900: 26 33 78;            /* #1A214E */
     
-    /* Brand Colors - Elegant & Refined */
-    --electric: 250 100% 68%;         /* #4F46E5 - Deep Electric Blue */
-    --neon: 195 100% 60%;             /* #00BFFF - Cyan Accent */
-    --gold: 45 100% 62%;              /* #FFD700 - Luxury Gold */
-    --crimson: 0 84% 60%;             /* #EF4444 - Premium Red */
-    --emerald: 142 76% 47%;           /* #22C55E - Success Green */
+    --accent: 0 229 255;              /* #00E5FF */
+    --signal-success: 34 197 94;      /* #22C55E */
+    --signal-warning: 245 158 11;     /* #F59E0B */
+    --signal-danger: 239 68 68;       /* #EF4444 */
     
-    /* Gradients - Sophisticated */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--electric)) 0%, hsl(var(--neon)) 50%, hsl(250 100% 75%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(35 100% 55%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(var(--obsidian)) 0%, hsl(var(--charcoal)) 100%);
-    --gradient-mesh: 
-      radial-gradient(circle at 20% 50%, hsl(var(--electric) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--neon) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, hsl(var(--gold) / 0.05) 0%, transparent 50%);
+    /* Surface System */
+    --surface-0: 11 13 18;            /* #0B0D12 */
+    --surface-50: 16 20 28;           /* #10141C */
+    --surface-100: 21 26 36;          /* #151A24 */
+    --surface-900: 241 244 250;       /* #F1F4FA */
+    --surface-1000: 255 255 255;      /* #FFFFFF */
     
-    /* Glass & Effects */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-glow: 0 8px 32px rgba(79, 70, 229, 0.2);
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-500)) 0%, hsl(var(--accent)) 45%, hsl(140 91 255) 100%);
     
-    /* Shadows - Sophisticated */
-    --shadow-elegant: 0 16px 40px rgba(0, 0, 0, 0.12);
-    --shadow-intense: 0 24px 60px rgba(0, 0, 0, 0.25);
-    --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.3);
-    --shadow-inset: inset 0 1px 3px rgba(255, 255, 255, 0.1);
+    /* Glass System */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-stroke: rgba(255, 255, 255, 0.22);
+    --glass-blur: 18px;
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px rgba(11, 13, 18, 0.25);
+    --shadow-elevated: 0 24px 60px rgba(11, 13, 18, 0.35);
     
     /* Semantic Mapping */
-    --background: var(--snow);
-    --foreground: var(--obsidian);
-    --card: var(--snow);
-    --card-foreground: var(--obsidian);
-    --popover: var(--snow);
-    --popover-foreground: var(--obsidian);
+    --background: var(--surface-1000);
+    --foreground: var(--surface-0);
+    --card: var(--surface-1000);
+    --card-foreground: var(--surface-0);
+    --popover: var(--surface-1000);
+    --popover-foreground: var(--surface-0);
     
-    --primary: var(--electric);
-    --primary-accent: var(--neon);
-    --primary-foreground: var(--snow);
+    --primary: var(--brand-500);
+    --primary-foreground: var(--surface-1000);
     
-    --secondary: var(--pearl);
-    --secondary-foreground: var(--obsidian);
-    --muted: var(--pearl);
-    --muted-foreground: var(--mist);
-    --accent: var(--slate);
-    --accent-foreground: var(--snow);
+    --secondary: var(--surface-900);
+    --secondary-foreground: var(--surface-0);
+    --muted: var(--surface-900);
+    --muted-foreground: var(--surface-100);
+    --accent: var(--accent);
+    --accent-foreground: var(--surface-0);
     
-    --destructive: var(--crimson);
-    --destructive-foreground: var(--snow);
-    --success: var(--emerald);
-    --warning: var(--gold);
+    --destructive: var(--signal-danger);
+    --destructive-foreground: var(--surface-1000);
+    --success: var(--signal-success);
+    --warning: var(--signal-warning);
     
-    --border: hsl(var(--slate) / 0.15);
-    --input: hsl(var(--slate) / 0.15);
-    --ring: var(--electric);
+    --border: hsl(var(--surface-100) / 0.15);
+    --input: hsl(var(--surface-100) / 0.15);
+    --ring: var(--brand-500);
     
     /* Sizing & Spacing */
     --radius-xs: 4px;
@@ -95,25 +95,25 @@
   }
 
   .dark {
-    --background: var(--obsidian);
-    --foreground: var(--snow);
-    --card: var(--charcoal);
-    --card-foreground: var(--snow);
-    --popover: var(--charcoal);
-    --popover-foreground: var(--snow);
+    --background: var(--surface-0);
+    --foreground: var(--surface-1000);
+    --card: var(--surface-50);
+    --card-foreground: var(--surface-1000);
+    --popover: var(--surface-50);
+    --popover-foreground: var(--surface-1000);
     
-    --secondary: var(--slate);
-    --secondary-foreground: var(--snow);
-    --muted: var(--slate);
-    --muted-foreground: var(--mist);
-    --accent: var(--charcoal);
-    --accent-foreground: var(--snow);
+    --secondary: var(--surface-100);
+    --secondary-foreground: var(--surface-1000);
+    --muted: var(--surface-100);
+    --muted-foreground: var(--surface-900);
+    --accent: var(--accent);
+    --accent-foreground: var(--surface-0);
     
-    --border: hsl(var(--slate) / 0.3);
-    --input: hsl(var(--slate) / 0.3);
+    --border: hsl(var(--surface-100) / 0.3);
+    --input: hsl(var(--surface-100) / 0.3);
     
     --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-stroke: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -131,9 +131,9 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    font-optical-sizing: auto;
-    letter-spacing: -0.025em;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
   
   /* Custom scrollbar */
@@ -156,43 +156,28 @@
 }
 
 @layer components {
-  /* Advanced Glass Effects */
+  /* Glass Effects */
   .glass-morphism {
     background: var(--glass-bg);
-    backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-glow), var(--shadow-inset);
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+    border: 1px solid var(--glass-stroke);
+    box-shadow: var(--shadow-soft);
   }
   
   .glass-card {
-    @apply glass-morphism rounded-[var(--radius-xl)] p-8;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    @apply glass-morphism rounded-2xl p-6;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   
   .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-intense), var(--glass-glow);
-    border-color: hsl(var(--primary) / 0.3);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+    border-color: hsl(var(--primary) / 0.4);
   }
   
-  /* Mesh Background */
-  .mesh-gradient {
-    background: var(--gradient-mesh);
-    position: relative;
-  }
-  
-  .mesh-gradient::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-primary);
-    opacity: 0.03;
-    z-index: -1;
-  }
-  
-  /* Advanced Typography */
+  /* Typography */
   .text-gradient {
-    background: var(--gradient-primary);
+    background: var(--gradient-brand);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -200,11 +185,23 @@
     animation: gradient-shift 8s ease infinite;
   }
   
-  .text-gold {
-    background: var(--gradient-gold);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+  }
+  
+  .font-body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
   }
   
   /* Button Variants */

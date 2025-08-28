@@ -26,7 +26,6 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					accent: 'hsl(var(--primary-accent))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
@@ -53,20 +52,28 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				success: 'hsl(var(--success))',
-				warning: 'hsl(var(--warning))',
-				danger: 'hsl(var(--destructive))',
-				obsidian: 'hsl(var(--obsidian))',
-				charcoal: 'hsl(var(--charcoal))',
-				slate: 'hsl(var(--slate))',
-				mist: 'hsl(var(--mist))',
-				pearl: 'hsl(var(--pearl))',
-				snow: 'hsl(var(--snow))',
-				electric: 'hsl(var(--electric))',
-				neon: 'hsl(var(--neon))',
-				gold: 'hsl(var(--gold))',
-				crimson: 'hsl(var(--crimson))',
-				emerald: 'hsl(var(--emerald))'
+				brand: {
+					50: 'hsl(var(--brand-50))',
+					100: 'hsl(var(--brand-100))',
+					200: 'hsl(var(--brand-200))',
+					300: 'hsl(var(--brand-300))',
+					400: 'hsl(var(--brand-400))',
+					500: 'hsl(var(--brand-500))',
+					600: 'hsl(var(--brand-600))',
+					700: 'hsl(var(--brand-700))',
+					800: 'hsl(var(--brand-800))',
+					900: 'hsl(var(--brand-900))'
+				},
+				surface: {
+					0: 'hsl(var(--surface-0))',
+					50: 'hsl(var(--surface-50))',
+					100: 'hsl(var(--surface-100))',
+					900: 'hsl(var(--surface-900))',
+					1000: 'hsl(var(--surface-1000))'
+				},
+				success: 'hsl(var(--signal-success))',
+				warning: 'hsl(var(--signal-warning))',
+				danger: 'hsl(var(--signal-danger))'
 			},
 			borderRadius: {
 				xs: 'var(--radius-xs)',
@@ -77,10 +84,10 @@ export default {
 				'2xl': 'var(--radius-2xl)'
 			},
 			fontFamily: {
-				display: ['Playfair Display', 'serif'],
-				heading: ['Playfair Display', 'serif'],
-				body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-				mono: ['Fira Code', 'ui-monospace', 'monospace']
+				display: ['Cormorant Garamond', 'serif'],
+				heading: ['Cormorant Garamond', 'serif'],
+				body: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+				mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace']
 			},
 			fontSize: {
 				xs: 'var(--text-xs)',
@@ -97,10 +104,8 @@ export default {
 				'8xl': 'var(--text-8xl)',
 			},
 			boxShadow: {
-				elegant: 'var(--shadow-elegant)',
-				intense: 'var(--shadow-intense)',
-				glow: 'var(--shadow-glow)',
-				glass: 'var(--glass-glow)'
+				soft: 'var(--shadow-soft)',
+				elevated: 'var(--shadow-elevated)'
 			},
 			backdropBlur: {
 				'xs': '2px',
