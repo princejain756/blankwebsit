@@ -33,13 +33,13 @@ const CategoryShowcase = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-surface-1000 to-brand-50">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
             Curated Categories
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Every product category backed by research and selected for impact.
           </p>
         </div>
@@ -48,8 +48,8 @@ const CategoryShowcase = () => {
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <div key={index} className="glass-card group overflow-hidden">
-                <div className="aspect-[4/3] mb-6 rounded-xl overflow-hidden">
+              <div key={index} className="group bg-white rounded-2xl border border-surface-100 hover:border-brand-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src={category.image} 
                     alt={category.headline}
@@ -57,29 +57,31 @@ const CategoryShowcase = () => {
                   />
                 </div>
                 
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-accent flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-white" />
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-sm">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-heading text-2xl font-bold text-foreground">
+                      {category.headline}
+                    </h3>
                   </div>
-                  <h3 className="font-heading text-2xl font-bold text-foreground">
-                    {category.headline}
-                  </h3>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {category.sub}
+                  </p>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="w-full group/btn hover:bg-brand-50 hover:border-brand-300 transition-all duration-300"
+                    asChild
+                  >
+                    <a href={category.cta.href}>
+                      {category.cta.label}
+                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                    </a>
+                  </Button>
                 </div>
-                
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {category.sub}
-                </p>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full group/btn glass-morphism"
-                  asChild
-                >
-                  <a href={category.cta.href}>
-                    {category.cta.label}
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                  </a>
-                </Button>
               </div>
             );
           })}

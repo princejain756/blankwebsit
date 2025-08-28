@@ -24,13 +24,13 @@ const PillarsGrid = () => {
   ];
 
   return (
-    <section className="py-20 bg-surface-1000">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-surface-50">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
             Science × Curation × You
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Three pillars that define everything we do at BLANK.
           </p>
         </div>
@@ -39,8 +39,8 @@ const PillarsGrid = () => {
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
-              <div key={index} className="glass-card group">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-accent flex items-center justify-center mb-6">
+              <div key={index} className="group p-8 rounded-2xl bg-white border border-surface-100 hover:border-brand-200 hover:shadow-lg transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center mb-6 shadow-lg">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -54,7 +54,7 @@ const PillarsGrid = () => {
                 
                 <Button 
                   variant="ghost" 
-                  className="group/btn p-0 h-auto text-brand-600 hover:text-brand-700"
+                  className="group/btn p-0 h-auto text-brand-600 hover:text-brand-700 font-medium"
                   asChild
                 >
                   <a href={pillar.cta.href}>

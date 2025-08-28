@@ -21,17 +21,17 @@ const TrustBar = () => {
   ];
 
   return (
-    <section className="py-8 bg-gradient-to-r from-surface-50 to-brand-50 border-t border-border">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <section className="py-12 bg-white border-t border-surface-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {trustItems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className="flex items-center gap-3 text-center md:text-left justify-center md:justify-start">
-                <div className="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-5 h-5 text-brand-600" />
+              <div key={index} className="flex items-center gap-4 text-center md:text-left justify-center md:justify-start">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-sm flex-shrink-0">
+                  <Icon className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-sm font-medium text-foreground">
+                <span className="text-sm font-medium text-foreground leading-tight">
                   {item.text}
                 </span>
               </div>
