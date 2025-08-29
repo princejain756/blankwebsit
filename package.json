@@ -1,0 +1,33 @@
+{
+  "name": "blank-journal-server",
+  "version": "1.0.0",
+  "description": "Backend server for BLANK Journal application with SQLite database",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "echo 'No build step needed for Node.js server'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "journal",
+    "sqlite",
+    "express",
+    "authentication",
+    "api"
+  ],
+  "author": "Prince Jain",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
